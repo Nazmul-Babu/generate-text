@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('ai',[AiController::class,'index']);
-Route::post('ai',[AiController::class,'text'])->name('ai');
+Route::get('ai',[AiController::class,'index'])->name('textget');
+Route::post('ai-3',[AiController::class,'text'])->name('aid');
+Route::post('ai',[AiController::class,'textsave'])->name('aisave');

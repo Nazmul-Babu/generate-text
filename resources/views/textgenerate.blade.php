@@ -8,16 +8,24 @@
 </head>
 <body>
 
-   <form action="{{ route('ai')}}" method="POST">
+   <form action="{{ route('aid')}}" method="POST">
     {{ csrf_field() }}
     <input type="text" name="text">
     <input type="submit" name="submit">
-   </form>
-   @if (isset($generate))
-            <div>output</div>
-            <div>{{ $generate}}</div>
 
-            @endif
+   </form>
+
+   <form action="{{ route('aisave')}}" method="POST">
+
+    @if (isset($generate))
+
+    {{-- <div>{{ $generate}}</div> --}}
+    <input type="text" value="{{ $generate}}"  name="content"><br>
+    <input type="submit" value="save">
+
+    @endif
+   </form>
+
 
 </body>
 </html>

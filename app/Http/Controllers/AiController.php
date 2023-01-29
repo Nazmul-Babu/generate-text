@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\History;
 use OpenAI\Laravel\Facades\OpenAI;
 use Illuminate\Http\Request;
 
@@ -25,5 +26,11 @@ class AiController extends Controller
         ]);
            $text=$result['choices'][0]['text'];
            return view('textgenerate',['generate'=> $text]);
+    }
+    public function textsave(){
+        History::create([
+            'title'=>'hello',
+            'content'=>request('content'),
+      ]);
     }
 }
