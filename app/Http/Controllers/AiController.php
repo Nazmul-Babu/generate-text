@@ -32,5 +32,6 @@ class AiController extends Controller
             'title'=>'hello',
             'content'=>request('content'),
       ]);
+      return to_route('textget');
     }
 }

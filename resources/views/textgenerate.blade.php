@@ -15,16 +15,16 @@
 
    </form>
 
-   <form action="{{ route('aisave')}}" method="POST">
 
     @if (isset($generate))
-
+    <form action="{{ route('aisave')}}" method="POST">
+     {{ csrf_field() }}
     {{-- <div>{{ $generate}}</div> --}}
     <input type="text" value="{{ $generate}}"  name="content"><br>
     <input type="submit" value="save">
+    </form>
 
     @endif
-   </form>
 
 
 </body>
